@@ -6,7 +6,7 @@ git push
 while :
 do
 	IP=$(curl http://members.3322.org/dyndns/getip)
-	if [ "$LAST_IP" -ne "$IP" ]; then
+	if [ "$LAST_IP" != "$IP" ]; then
 		echo $IP > ip.txt
 		git commit -a -m "update ip"
 		git push
